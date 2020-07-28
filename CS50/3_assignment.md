@@ -282,5 +282,7 @@ void printAnswers(char *who, const int target[], int length)
 }
 ~~~
 
+결과화면
 
+![image](https://user-images.githubusercontent.com/68533679/88653812-83892180-d107-11ea-978e-60b94e48eefc.png)
 
