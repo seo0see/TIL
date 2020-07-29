@@ -22,18 +22,23 @@ int main(void)
     printArray("점수", SCORES, NUMBER_OF_GRADES);
     printArray("학점", GRADES, NUMBER_OF_GRADES);
 
-    //성적 입력받기
-    askScore();
-    if (global == 999)
+    while (1)
     {
-        printf("학점 프로그램을 종료합니다.\n");
-        return -1;
+        askScore();
+
+        if (global == 999)
+        {
+            printf("학점 프로그램을 종료합니다.\n");
+            return -1;
+            break;
+        }
+        printf("입력한 학점은: %d\n", global);
+
+
+        char *grade = calculateGrade(global, SCORES, GRADES, NUMBER_OF_GRADES);
+        printf("%s\n", grade);
+
     }
-    printf("입력한 학점은: %d\n", global);
-
-
-    char *grade = calculateGrade(global, SCORES, GRADES, NUMBER_OF_GRADES);
-    printf("%s\n", grade);
 
     return 0;
 }
@@ -79,8 +84,12 @@ void askScore()
     }
     else global = input;
 }
+
+
+
 ~~~
 
 결과화면
 
-![image](https://user-images.githubusercontent.com/68533679/88795841-9f5df780-d1db-11ea-8474-7e0e143ab653.png)
+![image](https://user-images.githubusercontent.com/68533679/88818829-1dc99200-d1fa-11ea-8e21-260ede18357b.png)
+
