@@ -13,6 +13,7 @@ David의 친구들은 한 거리에 모두 모여살고 있습니다. David은 �
 
 **핵심개념**: 거리의 합이 최소, 중앙값, 
 
+### 문제풀이
 ~~~c
 #include <stdio.h>
 #include <math.h> // 반올림하는 함수 round 포함.
