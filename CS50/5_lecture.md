@@ -186,4 +186,50 @@ char *get_string(char *print)
 ~~~
 결과화면   
 ![image](https://user-images.githubusercontent.com/68533679/89897400-ec00f400-dc19-11ea-9c67-b9262f1bbc40.png)   
+### 메모리 할당과 해제
+valgrind 라는 프로그램을 사용하면 우리가 작성한 코드에서 메모리와 관련된 문제가 있는지를 쉽게 확인 가능. 
+~~~c
+#include <stdlib.h>
+
+void f(void)
+{
+    int *x = malloc(10 * sizeof(int));
+    x[10] = 0;
+}
+
+int main(void)
+{
+    f();
+    return 0;
+}
+~~~
+![image](https://user-images.githubusercontent.com/68533679/89899585-7bf46d00-dc1d-11ea-95f4-494f524e1f64.png)
+
+### 메모리 교환, 스택, 힙
+***여기서 가장 크게 배운 것은, 나는 함수 밖의 값을 바꾸려면 전역변수를 써야 하는 줄 알았음.     
+그런데 이렇게 포인터를 쓰면 쉽게 해결할 수 있는 문제였음***
+~~~c
+#include <stdio.h>
+
+void swap(int *a, int *b);
+
+int main(void)
+{
+    int x = 1;
+    int y = 2;
+
+    printf("x is %i, y is %i\n", x, y);
+    swap(&x, &y);
+    printf("x is %i, y is %i\n", x, y);
+}
+
+void swap(int *a, int *b)
+{
+    int tmp = *a;   //중요!
+    *a = *b;    //중요!
+    *b = tmp;   //중요!
+}
+~~~
+결과: x is 1, y is 2      x is 2, y is 1
+
 
