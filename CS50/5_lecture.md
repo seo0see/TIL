@@ -232,4 +232,22 @@ void swap(int *a, int *b)
 ~~~
 결과: x is 1, y is 2      x is 2, y is 1
 
+### 파일 쓰기
+~~~c
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    FILE *file = fopen("phonebook.csv", "a"); //a(덧붙이기),w(쓰기),r(읽기)이 있음
+    char *name = get_string("Name: ");
+    char *number = get_string("Number: ");
+    fprintf(file, "%s, %s\n", name, number);
+    fclose(file);
+}
+~~~
+
+
+
 
