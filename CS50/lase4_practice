@@ -1,0 +1,44 @@
+
+예제중 이것이 좀 좋아서...
+이렇게 재귀함수를 쓰는 것 익혀두기.
+~~c
+#include <stdio.h>
+
+int holl(int a);
+int zzack(int a);
+
+int main(void)
+{
+    int a;
+
+    printf("자연수 한 개를 입력하세요: ");
+    scanf("%d", &a);
+
+    if (a%2 == 0)
+    {
+        printf("%d", zzack(a));
+        printf("\n");
+    }
+    else
+    {
+        printf("%d", holl(a));
+        printf("\n");
+    }
+}
+
+int holl(int a)
+{
+    if (a==1) { return 1; }
+    else { printf("%d ", a); return holl(a-2); }
+}
+
+int zzack(int a)
+{
+    if (a==2) { return 2; }
+    else
+    {
+        printf("%d ", a);
+        return zzack(a-2);
+    }
+}
+~~~
