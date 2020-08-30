@@ -92,7 +92,8 @@ int main(int argc, char *argv[])
 
 
 ## 구조체와 캡슐화
-구조체에 학생정보(이름, 국어/수학/영어 점수, 평균)을 저장하고, 평균을 계산하여 출력하는 프로그램 작성하기
+***Q typedef struct{}___;와 struct ___{}; 의 차이*** 
+* 구조체에 학생정보(이름, 국어/수학/영어 점수, 평균)을 저장하고, 평균을 계산하여 출력하는 프로그램 작성하기
 ~~~c
 #include <stdio.h>
 #include <string.h>
@@ -128,4 +129,45 @@ int main()
 ~~~
 출력결과
 박호호 : 95.333333 \n 김하하 : 82.00000
+
+* 5명의 이름과 키를 입력받아 키가 가장 작은 사람의 이름과 키를 출력하는 프로그램 작성
+~~~c
+#include <stdio.h>
+#include <string.h>
+
+struct people
+{
+    char name[20];
+    int height;
+};
+
+int main()
+{
+    struct people p[5]; //구조체 역시 배열 선언이 가능함.
+    int min = 1000; // 가장 작은키
+    int min_index = 5; // 그 키의 index
+
+    for (int i=0; i<5; i++)
+    {
+        printf("5명의 '이름 키'를 입력하세요.\n")
+        scanf("%s %d", p[i].name, &p[i].height);
+        // &p[i]name이면 "format specifies type 'char *' but the argument has type 'char (*)[20]'"오류, p[i].height이면 "format specifies type 'int *' but the argument has type'int'"오류.
+        // 원래는 &__로 그 변수를 가리키는 것의 주소룰 써야하는데, name자체가 그 배열의 주소를 가리키는 이름이니까 이것이 가능한듯.(확실하지 않음. 내 생각.)
+    }
+
+    // 최솟값과 그 인덱스 정하기.
+    for (int i=0; i<5; i++)
+    {
+        if (min>p[i].height)
+        {
+            min = p[i].height;
+            min_index = i;
+        }
+    }
+
+    printf("%s : %d\n", p[min_index].name, p[min_index].height);
+
+}
+~~~
+
 
