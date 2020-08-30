@@ -89,3 +89,43 @@ int main(int argc, char *argv[])
 ~~~
 결과화면      
 ![image](https://user-images.githubusercontent.com/68533679/91302956-39688e00-e7e2-11ea-9d6c-5727e09f7bf8.png)
+
+
+## 구조체와 캡슐화
+구조체에 학생정보(이름, 국어/수학/영어 점수, 평균)을 저장하고, 평균을 계산하여 출력하는 프로그램 작성하기
+~~~c
+#include <stdio.h>
+#include <string.h>
+
+
+typedef struct student
+{
+    char name[20];
+    int korean, math, english;
+    double ave;
+} student;
+
+int main()
+{
+    struct student s1;
+    struct student s2 = {"김하하", 80, 94, 72};
+    //Q. struct 배열을 가지고서 할 때, 꼭 모두 다 정의해야하나?
+    //마지막의 것 안했을때, missing field 'ave' initializer 오류가 생김.
+
+    s1.korean = 98;
+    s1.math = 88;
+    s1.english = 100;
+    strcpy(s1.name, "박호호");
+
+    printf("%d, %d, %d", s1.korean, s1.math, s1.english);
+
+    s1.ave = (double)(s1.korean + s1.math + s1.english) / 3;
+    s2.ave = (double)(s2.korean + s2.math + s2.english) / 3;
+
+    printf("%s : %f\n", s1.name, s1.ave);
+    printf("%s : %f\n", s2.name, s2.ave);
+}
+~~~
+출력결과
+박호호 : 95.333333 \n 김하하 : 82.00000
+
