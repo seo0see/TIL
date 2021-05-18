@@ -1,5 +1,5 @@
 ### input.txt 파일의 내용을 라인 번호와 함께 output.txt파일에 출력
-[출처: https://ehclub.co.kr/1141 ]
+[출처: (주요) https://ehclub.co.kr/1141 , (추가) https://zapiro.tistory.com/entry/%ED%8C%8C%EC%9D%BC-%EC%9E%85%EC%B6%9C%EB%A0%A5File-InputOutput-%EC%86%8C%EC%8A%A4 ]
 
 ### feof 함수
 [출처: https://ddoddofather.tistory.com/entry/C%EC%96%B8%EC%96%B4-%ED%8C%8C%EC%9D%BC%EC%9E%85%EC%B6%9C%EB%A0%A5-feof%ED%95%A8%EC%88%98%EB%A5%BC-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90]
