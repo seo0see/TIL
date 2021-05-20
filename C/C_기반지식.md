@@ -2,14 +2,14 @@
 (이 내용만 봐도 됨)
 
 ## 다뤄야 하는 내용
-- [구조체](#구조체) :star:  
+- [구조체](#구조체-struct) :star:  
 - [pointer](#pointer) :star:  
-- [동적할당](#동적-메모리-할당) :star:  
+- [동적할당](#동적-메모리-할당-dynamic-memory-allocation) :star:  
 - 배열  
 - 함수  
 
 
-## 구조체(struct)
+## 구조체 (struct)
 <- 이미 CS50의 'last_4_practice.md'에서 다룸(구조체와 캡슐화)  
 \[출처: https://blog.naver.com/htt12253/222121401483 , https://dojang.io/mod/page/view.php?id=408 ]  
 - 서로 다른 자료형을 묶은 것. 다른 말로, 사용자 정의 자료형.  
@@ -229,7 +229,7 @@ int main()
 
 
 
-## 동적 메모리 할당(dynamic memory allocation)
+## 동적 메모리 할당 (dynamic memory allocation)
 <- 이미 CS50의 '3_과제수행_중_조사.md'(자세히 다룸), '5_lecture.md'(간단히 코드)에서 다룸.  
 [출처: (주요) https://m.blog.naver.com/PostView.naver?blogId=jsky10503&logNo=221260798099&proxyReferer=https:%2F%2Fwww.google.com%2F , (추가) https://dojang.io/mod/page/view.php?id=285 ]  
 컴퓨터 프로그래밍에서 실행 시간 동안 사용할 메모리 할당하는 것. (실행하는 순간 프로그램이 사용할 메모리의 크기를 고려하여 메모리의 할당이 이루어지는 정적 메모리할당과는 대조적)  
