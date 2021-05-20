@@ -2,9 +2,9 @@
 (이 내용만 봐도 됨)
 
 ## 다뤄야 하는 내용
-- [구조체](#구조체(struct)) :star:  
+- [구조체](#구조체) :star:  
 - [pointer](#pointer) :star:  
-- [동적할당](#동적-메모리-할당(dynamic-memory-allocation)) :star:  
+- [동적할당](#동적-메모리-할당) :star:  
 - 배열  
 - 함수  
 
